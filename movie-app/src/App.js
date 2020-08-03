@@ -1,10 +1,41 @@
 import React from 'react';
 
+class App extends React.Component{
+  state = {
+    isLoading: true,
+    movie : []
+  };
+
+  componentDidMount(){
+    setTimeout(()=>{
+      this.setState({isLoading : false});
+    }, 6000)
+  }
+
+  render(){
+    const {isLoading} = this.state;
+    return <div>{isLoading ? 'Loading...' : 'we are ready'} </div>;
+  }
+}
+
+export default App;
+
+
+/*
 class App extends React.Component {
   constructor(props){
     super(props);
     console.log('hello');
   }
+
+  componentDidMount(){
+    console.log('component rendered');
+  }
+
+  componentDidUpdate(){
+    console.log(`I'm updated`);
+  }
+
   state = {
     count : 0,
   };
@@ -22,7 +53,7 @@ class App extends React.Component {
   }
 
   render(){
-    console.log('render');
+    console.log("i'm rendering");
     return (
       <div>
         <h1> I'm a class Component {this.state.count} </h1>
@@ -33,7 +64,7 @@ class App extends React.Component {
   }
 }
 
-/*
+
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -86,4 +117,3 @@ Food.prototype = {
   rating : PropTypes.number
 };
 */
-export default App;
