@@ -123,10 +123,6 @@ Movie.propTypes = {
 export default Movie;
 ```
 
-## return
-return () 
-return 의 차이를 알아보자
-
 
 ## route props
 route-props
